@@ -89,10 +89,10 @@ variable "route_tables_ids" {
 }
 
 #############################################################################
-# Tags
+# Network Tags
 #############################################################################
 
-variable "tags" {
+variable "network_tags" {
   description = "The tags to associate with your network and subnets."
   type        = map(string)
 
