@@ -3,13 +3,13 @@ data "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_public_ip" "publicip" {
-  name                = var.public_ip_name
+  name                = var.ag_public_ip_name
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = data.azurerm_resource_group.rg.location
   allocation_method   = var.allocation_method
   sku                 = var.public_ip_sku
   domain_name_label   = var.domain_name_label
-  availability_zone   = var.availability_zone
+  availability_zone   = var.ag_availability_zone
 }
 
 # since these variables are re-used - a locals block makes this more maintainable
@@ -23,8 +23,8 @@ resource "azurerm_application_gateway" "app-gateway" {
   location            = data.azurerm_resource_group.rg.location
 
   sku {
-    name     = var.sku_name
-    tier     = var.sku_tier
+    name     = var.ag_sku_name
+    tier     = var.ag_sku_tier
     capacity = var.capacity
   }
 

@@ -46,11 +46,11 @@ variable "path_based_request_routing_rules" {
   type = any
   default = []
 }
-variable "sku_name" {
+variable "ag_sku_name" {
   description = "Name of App Gateway SKU. Options include Standard_Small, Standard_Medium, Standard_Large, Standard_v2, WAF_Medium, WAF_Large, and WAF_v2"
   default     = "Standard_v2"
 }
-variable "sku_tier" {
+variable "ag_sku_tier" {
   description = "Tier of App Gateway SKU. Options include Standard, Standard_v2, WAF and WAF_v2"
   default     = "Standard_v2"
 }
@@ -137,7 +137,7 @@ variable "domain_name_label" {
   description = "Domain name label for Public IP created."
   default = null
 }
-variable "availability_zone" {
+variable "ag_availability_zone" {
   description = "(Optional) The availability zone to allocate the Public IP in. Possible values are Zone-Redundant, 1, 2, 3, and No-Zone. Defaults to Zone-Redundant."
   default = "Zone-Redundant"
 }
