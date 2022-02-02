@@ -16,7 +16,7 @@ variable "location" {
 # Azure SQL Server Variables
 #############################################################################
 
-variable "sql_server" {
+variable "sql_server_name" {
   description = "Name of Azure SQL server instance being created"
   type        = string
 }
@@ -27,13 +27,13 @@ variable "server_version" {
   default     = "12.0"
 }
 
-variable "admin_login" {
+variable "sql_admin_login" {
   description = "(Required) The administrator login name for the new server. Changing this forces a new resource to be created."
   type        = string
   default     = "azadmin"
 }
 
-variable "admin_password" {
+variable "sql_admin_password" {
   description = "(Required) The password associated with the administrator_login user. Needs to comply with Azure's Password Policy"
   type        = string
   default     = "NotAPassword01"
@@ -73,7 +73,7 @@ variable "license_type" {
   default     = "LicenseIncluded"
 }
 
-variable "sku_name" {
+variable "sql_sku_name" {
   description = "(Optional) Specifies the name of the sku used by the database. Changing this forces a new resource to be created. For example, GP_S_Gen5_2,HS_Gen4_1,BC_Gen5_2, ElasticPool, Basic,S0, P2 ,DW100c, DS100."
   type        = string
   default     = null
@@ -91,7 +91,7 @@ variable "collation" {
   default     = "SQL_LATIN1_GENERAL_CP1_CI_AS"
 }
 
-variable "zone_redundant" {
+variable "sql_zone_redundant" {
   description = "(Optional) Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones. This property is only settable for Premium and Business Critical databases."
   type        = bool
   default     = false

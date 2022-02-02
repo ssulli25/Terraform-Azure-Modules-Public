@@ -4,12 +4,12 @@ data "azurerm_resource_group" "rg" {
 
 
 resource "azurerm_mssql_server" "sql-server" {
-  name                         = var.sql_server
+  name                         = var.sql_server_name
   resource_group_name          = data.azurerm_resource_group.rg.name
   location                     = coalesce(var.location, data.azurerm_resource_group.rg.location)
   version                      = var.server_version
-  administrator_login          = var.admin_login
-  administrator_login_password = var.admin_password
+  administrator_login          = var.sql_admin_login
+  administrator_login_password = var.sql_admin_password
   minimum_tls_version          = var.minimum_tls_version
   tags                         = var.sql_tags
 
@@ -30,8 +30,8 @@ resource "azurerm_mssql_database" "sql-db" {
   server_id                        = azurerm_mssql_server.sql-server.id
   collation                        = var.collation
   license_type                     = var.license_type
-  sku_name                         = var.sku_name
-  zone_redundant                   = var.zone_redundant
+  sku_name                         = var.sql_sku_name
+  zone_redundant                   = var.sql_zone_redundant
   create_mode                      = var.create_mode
   elastic_pool_id                  = var.enable_elasticpool == true ? azurerm_mssql_elasticpool.elastic_pool[0].id : null
 
