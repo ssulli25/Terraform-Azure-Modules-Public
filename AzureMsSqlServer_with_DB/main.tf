@@ -48,7 +48,7 @@ resource "azurerm_mssql_elasticpool" "elastic_pool" {
   resource_group_name = data.azurerm_resource_group.rg.name
   server_name         = azurerm_mssql_server.sql-server.name
   max_size_gb         = var.elastic_pool_max_size
-  zone_redundant      = var.zone_redundant
+  zone_redundant      = var.sql_zone_redundant
 
   per_database_settings {
     max_capacity = var.database_max_capacity
