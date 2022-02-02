@@ -5,10 +5,10 @@ variable "resource_group_name" {
 variable "appgw_name" {
   description = "Name of App Gateway"
 }
-variable "vnet_name" {
+variable "ag_vnet_name" {
   description = "Name of Virtual Network that the App Gateway will be placed."
 }
-variable "subnet_id" {
+variable "ag_subnet_id" {
   description = "Subnet Id of Application Gateway."
 }
 variable "fe_ip_config_name" {
