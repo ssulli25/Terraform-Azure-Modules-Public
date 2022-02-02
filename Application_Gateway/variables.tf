@@ -122,18 +122,18 @@ variable "ssl_certificates" {
 
 ### Public IP 
 
-variable "public_ip_name" {
+variable "ag_public_ip_name" {
   description = "Public IP of App GW."
 }
-variable "allocation_method" {
+variable "ag_allocation_method" {
   description = "(Required) Defines the allocation method for this IP address. Possible values are Static or Dynamic."
   default     = "Static"
 }
-variable "public_ip_sku" {
+variable "ag_public_ip_sku" {
   description = "(Optional) The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic."
   default     = "Standard"
 }
-variable "domain_name_label" {
+variable "ag_domain_name_label" {
   description = "Domain name label for Public IP created."
   default = null
 }

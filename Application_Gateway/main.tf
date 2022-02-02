@@ -6,9 +6,9 @@ resource "azurerm_public_ip" "publicip" {
   name                = var.ag_public_ip_name
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = data.azurerm_resource_group.rg.location
-  allocation_method   = var.allocation_method
-  sku                 = var.public_ip_sku
-  domain_name_label   = var.domain_name_label
+  allocation_method   = var.ag_allocation_method
+  sku                 = var.ag_public_ip_sku
+  domain_name_label   = var.ag_domain_name_label
   availability_zone   = var.ag_availability_zone
 }
 
